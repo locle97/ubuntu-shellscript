@@ -1,1 +1,1 @@
-# ai-ubuntu
+# Shellscript to preinstall ubuntu VPS
