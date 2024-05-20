@@ -1,9 +1,9 @@
 sudo apt update
 
 # Config git global
-git config --global usre.email "lpl212757@gmail.com"
-git config --global user.name "Loc Le"
-git config --global credential.helper store
+sudo git config --global usre.email "lpl212757@gmail.com"
+sudo git config --global user.name "Loc Le"
+sudo git config --global credential.helper store
 
 # Install Neo4vim
 curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux64.tar.gz
@@ -56,6 +56,9 @@ sudo usermod -aG docker ${USER}
 su - ${USER}
 groups
 sudo usermod -aG docker root
+
+# Install unzip
+sudo apt install unzip
 
 # Start nvim
 nvim
