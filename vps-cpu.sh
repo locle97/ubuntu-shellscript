@@ -24,17 +24,17 @@ sudo rm -rf lazygit
 lazygit --version
 
 # Install ubuntu driver
-sudo apt install ubuntu-drivers-common -y
+sudo DEBIAN_FRONTEND=noninteractive apt install ubuntu-drivers-common -y
 
 # Install NodeJS
 sudo apt update
-sudo apt install nodejs -y
+sudo DEBIAN_FRONTEND=noninteractive apt install nodejs -y
 node -v
-sudo apt install npm -y
+sudo DEBIAN_FRONTEND=noninteractive apt install npm -y
 
 # Install python3
-sudo apt install python3 -y
-sudo apt install python3-pip -y
+sudo DEBIAN_FRONTEND=noninteractive apt install python3 -y
+sudo DEBIAN_FRONTEND=noninteractive apt install python3-pip -y
 
 # Install conda
 mkdir -p ~/miniconda3
@@ -44,12 +44,12 @@ rm -rf ~/miniconda3/miniconda.sh
 
 # Install Docker
 sudo apt update
-sudo apt install apt-transport-https ca-certificates curl software-properties-common -y
+sudo DEBIAN_FRONTEND=noninteractive apt install apt-transport-https ca-certificates curl software-properties-common -y
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
 echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 sudo apt update
 apt-cache policy docker-ce
-sudo apt install docker-ce -y
+sudo DEBIAN_FRONTEND=noninteractive apt install docker-ce -y
 sudo systemctl status docker
 
 sudo usermod -aG docker ${USER}
